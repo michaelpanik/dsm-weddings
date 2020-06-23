@@ -1,11 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -14,26 +12,42 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
+      <div className="py-32 bg-gray-300 font-serif text-center mb-12">
+        <h1 className="text-4xl uppercase tracking-widest text-white font-light">
+          Blog
+        </h1>
+      </div>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug} className="bg-white p-12 mb-10 shadow">
-            <header className="mb-6">
-              <h2 className="text-3xl">
-                <Link style={{ boxShadow: `none` }} to={node.fields.slug}>
+          <article key={node.fields.slug} className="w-1/2 mx-auto text-center mb-12 text-gray-700">
+            <header className="mb-6 font-serif">
+              <div className="text-gray-600 italic leading-lg mb-2">
+                {node.frontmatter.date}
+                <span className="inline-block mx-2">–</span>
+                {node.frontmatter.category}
+                <span className="inline-block mx-2">–</span>
+                {node.frontmatter.author}
+              </div>
+              <h2 className="text-4xl uppercase tracking-widest text-gray-700 hover:text-gray-600 active:text-gray-600">
+                <Link to={node.fields.slug}>
                   {title}
                 </Link>
               </h2>
-              <small className="text-gray-800 italic leading-lg">
-                <FontAwesomeIcon icon={faCalendarAlt} className="text-gray-500 text-xs" /> {node.frontmatter.date}
-              </small>
             </header>
+            <Link to={node.fields.slug} className="block mb-6 hover:opacity-75">
+              <Img fluid={node.frontmatter.featured_image.childImageSharp.fluid} />
+            </Link>
             <section>
               <p
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}
+                className="font-light leading-7 mx-auto text-sm tracking-wide mb-5"
               />
+              <Link to={node.fields.slug} className="tracking-widest uppercase hover:text-gray-600 active:text-gray-600">
+                Read more
+              </Link>
             </section>
           </article>
         )
@@ -62,6 +76,15 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            author
+            category
+            featured_image {
+              childImageSharp {
+                fluid(maxWidth: 800) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
       }

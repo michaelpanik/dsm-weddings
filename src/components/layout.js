@@ -7,9 +7,9 @@ import Footer from "./footer"
 
 const Layout = ({ children }) => {
   return (
-    <div className="bg-gray-200 font-serif">
+    <div>
       <Navbar />
-      <main className="py-10 container mx-auto ">
+      <main className="px-8">
         {children}
       </main>
       <Footer />

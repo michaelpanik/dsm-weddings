@@ -4,9 +4,9 @@ import { siteMetadata } from '../../gatsby-config'
 
 const Navbar = () => {
     return (
-        <header className="bg-white w-100 px-8 py-5 text-center">
+        <header className="bg-white text-gray-700 w-100 py-10 px-8">
             <Link to="/">
-                <h1>{siteMetadata.title}</h1>
+                <div className="italic font-serif">{siteMetadata.title}</div>
             </Link>
         </header>
     )

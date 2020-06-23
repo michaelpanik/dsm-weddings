@@ -19,7 +19,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article className="bg-white px-8 py-10">
+      <article>
         <header className="text-center">
           <h1 className="text-5xl">
             {post.frontmatter.title}
@@ -72,7 +72,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        wedding_date(formatString: "MMMM DD, YYYY")
         description
         video_id
       }
