@@ -20,7 +20,7 @@ const BlogIndex = ({ data, location }) => {
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
-          <article key={node.fields.slug} className="w-1/2 mx-auto text-center mb-12 text-gray-700">
+          <article key={node.fields.slug} className="w-full max-w-2xl mx-auto text-center mb-12 text-gray-700">
             <header className="mb-6 font-serif">
               <div className="text-gray-600 italic leading-lg mb-2">
                 {node.frontmatter.date}
