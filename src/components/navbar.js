@@ -33,7 +33,7 @@ const Navbar = ({ path }) => {
             >
                 <FontAwesomeIcon icon={faBars} />
             </button>
-            <nav class={`bg-white font-serif transition-all duration-300
+            <nav class={`bg-white uppercase transition-all duration-300
                 fixed h-full w-10/12 p-10 right-0 top-0 z-10 transform ${menuOpen ? 'shadow-xl' : 'translate-x-full'}
                 md:static md:h-auto md:w-auto md:p-0 md:shadow-none md:translate-x-0
             `}>
