@@ -35,7 +35,7 @@ const Footer = () => {
             <span className="mx-3 text-gray-500">|</span>
             <div className="inline">
                 {socialAccounts.map(([network, handle], i) => (
-                    <a href={`https://${network}.com/${handle}`} className={i < socialAccounts.length - 1 ? "mr-2" : ""}>
+                    <a href={`https://${network}.com/${handle}`} className={i < socialAccounts.length - 1 ? "mr-2 inline-block" : "inline-block"}>
                         <FontAwesomeIcon icon={socialIcons[network]} />
                     </a>
                 ))}
