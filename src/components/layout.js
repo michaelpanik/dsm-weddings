@@ -7,9 +7,9 @@ import Footer from "./footer"
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="text-gray-700">
       <Navbar />
-      <main className="px-8">
+      <main className="px-0 md:px-8">
         {children}
       </main>
       <Footer />
