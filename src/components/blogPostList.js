@@ -15,8 +15,6 @@ const BlogPostList = ({ post }) => {
           {post.frontmatter.date}
           <span className="inline-block mx-2">–</span>
           {post.frontmatter.category}
-          <span className="inline-block mx-2">–</span>
-          {post.frontmatter.author}
         </div>
         <Link to={post.fields.slug}>
             <h2 className="text-4xl uppercase tracking-widest text-gray-700 hover:text-gray-600 active:text-gray-600 font-light duration-150 transition-all">

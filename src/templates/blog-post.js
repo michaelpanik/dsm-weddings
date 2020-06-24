@@ -7,6 +7,7 @@ import VimeoEmbed from "../components/vimeoEmbed"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons"
+import Hero from "../components/hero"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -19,18 +20,26 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article>
-        <header className="text-center">
-          <h1 className="text-5xl">
-            {post.frontmatter.title}
-          </h1>
-          <p className="text-gray-800 italic">
-            <FontAwesomeIcon icon={faCalendarAlt} className="text-gray-500 text-xs -mt-2" /> {post.frontmatter.date}
-          </p>
-        </header>
-        <hr className="w-10 mx-auto my-10" />
-        <section dangerouslySetInnerHTML={{ __html: post.html }} className="mb-10" />
-        <hr />
+      <Hero
+        image={post.frontmatter.featured_image.childImageSharp.fluid}
+      >
+        <div className="text-white italic leading-lg mb-2 text-sm md:text-base">
+          {post.frontmatter.date}
+          <span className="inline-block mx-2">–</span>
+          {post.frontmatter.category}
+        </div>
+        <h1 className="text-4xl uppercase tracking-widest text-white font-light">
+          {post.frontmatter.title}
+        </h1>
+      </Hero>
+      <article className="w-full max-w-2xl mx-auto text-center mb-12 text-gray-700">
+        <div className="text-left mb-10 font-serif italic text-gray-500 hover:text-gray-700">
+          <Link to="/">&larr; Back to blog</Link>
+        </div>
+        <section
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          className="mb-10"
+        />
         <VimeoEmbed id={post.frontmatter.video_id} />
       </article>
 
@@ -71,9 +80,18 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        category
+        author
         date(formatString: "MMMM DD, YYYY")
         description
         video_id
+        featured_image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

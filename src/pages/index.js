@@ -1,10 +1,10 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BlogPostList from "../components/blogPostList"
+import Hero from "../components/hero"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
@@ -12,21 +12,12 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <div className="py-32 font-serif text-center mb-12 relative overflow-hidden">
-        <Img fixed={data.hero.childImageSharp.fixed} style={{
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          width: "100%",
-          height: "100%",
-          transform: "translate(-50%,-50%)",
-          zIndex: -1
-        }} />
+      <SEO title="Blog" />
+      <Hero image={data.hero.childImageSharp.fixed}>
         <h1 className="text-4xl uppercase tracking-widest text-white font-light">
           Blog
         </h1>
-      </div>
+      </Hero>
       {posts.map(({ node }) => {
         return <BlogPostList post={node} />
       })}
