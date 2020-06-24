@@ -40,19 +40,19 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </Link>
         </p>
         <VimeoEmbed id={post.frontmatter.video_id} className="mb-10" />
-        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <section dangerouslySetInnerHTML={{ __html: post.html }} className="mb-10" />
         <nav>
-          <ul>
+          <ul className="flex justify-between">
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
+                <Link to={previous.fields.slug} rel="prev" className="font-serif italic text-gray-500 hover:text-gray-700">
                   ← {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
+                <Link to={next.fields.slug} rel="next" className="font-serif italic text-gray-500 hover:text-gray-700">
                   {next.frontmatter.title} →
                 </Link>
               )}
