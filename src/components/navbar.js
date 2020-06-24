@@ -4,6 +4,8 @@ import { siteMetadata } from '../../gatsby-config'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 
+import leaf from '../assets/leaf.svg'
+
 const Navbar = ({ path }) => {
     const [menuOpen, setMenuOpen] = useState(false)
 
@@ -24,6 +26,7 @@ const Navbar = ({ path }) => {
 
     return (
         <header className="bg-white text-gray-700 w-100 py-10 px-8 flex justify-between align-center">
+            <img src={leaf} className="absolute right-0 top-0 w-2/12 z-0" style={{ opacity: '10%' }} />
             <Link to="/">
                 <div className="italic font-serif">{siteMetadata.title}</div>
             </Link>
@@ -33,9 +36,9 @@ const Navbar = ({ path }) => {
             >
                 <FontAwesomeIcon icon={faBars} />
             </button>
-            <nav class={`bg-white uppercase transition-all duration-300
-                fixed h-full w-10/12 p-10 right-0 top-0 z-10 transform ${menuOpen ? 'shadow-xl' : 'translate-x-full'}
-                md:static md:h-auto md:w-auto md:p-0 md:shadow-none md:translate-x-0
+            <nav class={`uppercase transition-all duration-300
+                bg-white fixed h-full w-10/12 p-10 right-0 top-0 z-10 transform ${menuOpen ? 'shadow-xl' : 'translate-x-full'}
+                md:bg-transparent md:static md:h-auto md:w-auto md:p-0 md:shadow-none md:translate-x-0
             `}>
                 <div className="text-right mb-8 md:hidden">
                     <button
