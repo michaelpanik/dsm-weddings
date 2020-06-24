@@ -15,11 +15,15 @@ const Navbar = ({ path }) => {
             to: '/',
         },
         {
-            label: 'About DSM',
+            label: 'Meet Us',
             to: '/about/',
         },
         {
-            label: 'Get In Touch',
+            label: 'FAQ',
+            to: '/faq/',
+        },
+        {
+            label: 'Contact',
             to: '/contact/',
         },
     ]
