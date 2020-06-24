@@ -33,14 +33,13 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </h1>
       </Hero>
       <article className="w-full max-w-2xl mx-auto text-center mb-12 text-gray-700">
-        <div className="text-left mb-10 font-serif italic text-gray-500 hover:text-gray-700">
-          <Link to="/">&larr; Back to blog</Link>
-        </div>
+        <p className="text-left mb-10">
+          <Link to="/" className="font-serif italic text-gray-500 hover:text-gray-700">&larr; Back to blog</Link>
+        </p>
+        <VimeoEmbed id={post.frontmatter.video_id} className="mb-10" />
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
-          className="mb-10"
         />
-        <VimeoEmbed id={post.frontmatter.video_id} />
       </article>
 
       <nav>

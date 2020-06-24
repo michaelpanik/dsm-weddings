@@ -1,11 +1,12 @@
 import React from 'react'
 
-const VimeoEmbed = ({id}) => {
+const VimeoEmbed = ({id, className}) => {
     return (<div
       style={{
         padding: "56.25% 0 0 0",
         position: "relative"
       }}
+      className={className}
     >
       <iframe
         src={`https://player.vimeo.com/video/${id}?color=ffffff&title=0&byline=0&portrait=0`}
