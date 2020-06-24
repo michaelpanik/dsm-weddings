@@ -6,6 +6,9 @@ module.exports = {
         serif: ['Playfair Display', 'serif'],
         sans: ['Montserrat', 'sans-serif'],
       },
+      letterSpacing: {
+        widest: '.3em',
+      }
     },
   },
   variants: {},
