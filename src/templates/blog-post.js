@@ -64,12 +64,28 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 export default BlogPostTemplate
 
 export const BlogPostTemplatePreview = ({ entry, getAsset, widgetFor }) => {
+  const date = new Date(entry.getIn(['data', 'date']))
+  const dateTimeFormat = new Intl.DateTimeFormat('en', { year: 'numeric', month: 'long', day: '2-digit' }) 
+  const [{ value: month },,{ value: day },,{ value: year }] = dateTimeFormat.formatToParts(date) 
+
   return (
     <>
       <Hero image={getAsset(entry.getIn(['data', 'featured_image'])).toString()}>
-        <img src={getAsset(entry.getIn(['data', 'featured_image'])).toString()} />
+        <img
+          src={getAsset(entry.getIn(['data', 'featured_image'])).toString()}
+          style={{
+            maxWidth: "100%",
+            // position: "absolute",
+            // left: "50%",
+            // top: "50%",
+            // width: "100%",
+            // height: "100%",
+            // transform: "translate(-50%,-50%)",
+            // zIndex: -1,
+          }}
+        />
         <div className="text-white italic leading-lg mb-2 text-sm md:text-base">
-          {entry.getIn(['data', 'date'])}
+          {`${month} ${day}, ${year}`}
           <span className="inline-block mx-2">–</span>
           {entry.getIn(['data', 'category'])}
         </div>
