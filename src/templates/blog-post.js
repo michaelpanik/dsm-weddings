@@ -4,9 +4,6 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import VimeoEmbed from "../components/vimeoEmbed"
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons"
 import Hero from "../components/hero"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -65,6 +62,30 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 }
 
 export default BlogPostTemplate
+
+export const BlogPostTemplatePreview = ({ entry, getAsset, widgetFor }) => {
+  return (
+    <>
+      <Hero image={getAsset(entry.getIn(['data', 'featured_image'])).toString()}>
+        <img src={getAsset(entry.getIn(['data', 'featured_image'])).toString()} />
+        <div className="text-white italic leading-lg mb-2 text-sm md:text-base">
+          {entry.getIn(['data', 'date'])}
+          <span className="inline-block mx-2">–</span>
+          {entry.getIn(['data', 'category'])}
+        </div>
+        <h1 className="text-4xl uppercase tracking-widest text-white font-light">
+          <h1>{entry.getIn(['data', 'title'])}</h1>
+        </h1>
+      </Hero>
+      <article className="w-full max-w-2xl mx-auto text-center mb-12 text-gray-700">
+        <VimeoEmbed id={entry.getIn(['data', 'video_id'])} className="mb-10" />
+        <div className="mb-10">
+          {widgetFor('body')}
+        </div>
+      </article>
+    </>
+  )
+}
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
