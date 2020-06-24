@@ -30,7 +30,7 @@ const Footer = () => {
     const socialAccounts = Object.entries(site.siteMetadata.social)
 
     return (
-        <footer className="bg-gray-800 text-gray-100 font-serif italic text-center text-sm m-8 px-8 py-10">
+        <footer className="bg-gray-800 text-gray-100 font-serif italic text-center text-sm md:m-8 px-8 py-10">
             <span className="md:inline block mb-3 md:mb-0">
                 © {new Date().getFullYear()}, <a href="https://www.doublespringsmedia.com" className="hover:text-gray-500">Double Springs Media</a>
             </span>
