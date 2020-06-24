@@ -7,6 +7,7 @@ module.exports = {
         sans: ['Montserrat', 'sans-serif'],
       },
       letterSpacing: {
+        wider: '.2em',
         widest: '.3em',
       }
     },

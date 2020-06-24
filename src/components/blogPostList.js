@@ -18,11 +18,13 @@ const BlogPostList = ({ post }) => {
           <span className="inline-block mx-2">–</span>
           {post.frontmatter.author}
         </div>
-        <h2 className="text-4xl uppercase tracking-widest text-gray-700 hover:text-gray-600 active:text-gray-600 font-light">
-          <Link to={post.fields.slug}>{title}</Link>
-        </h2>
+        <Link to={post.fields.slug}>
+            <h2 className="text-4xl uppercase tracking-widest text-gray-700 hover:text-gray-600 active:text-gray-600 font-light duration-150 transition-all">
+                {title}
+            </h2>
+        </Link>
       </header>
-      <Link to={post.fields.slug} className="block mb-6 hover:opacity-75">
+      <Link to={post.fields.slug} className="block mb-6 hover:opacity-75  duration-150 transition-all">
         <Img fluid={post.frontmatter.featured_image.childImageSharp.fluid} />
       </Link>
       <section>
@@ -34,7 +36,7 @@ const BlogPostList = ({ post }) => {
         />
         <Link
           to={post.fields.slug}
-          className="tracking-widest uppercase hover:text-gray-600 active:text-gray-600"
+          className="tracking-wider uppercase hover:text-gray-600 active:text-gray-600  duration-150 transition-all"
         >
           Read more
         </Link>
