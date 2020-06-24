@@ -10,8 +10,10 @@ const NotFoundPage = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="404: Not Found" />
-      <h1>Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <div className="text-center py-12">
+        <h1 className="text-6xl font-serif uppercase tracking-wider mb-8">404: Not Found</h1>
+        <p className="text-lg">Sorry, this page doesn't exist.</p>
+      </div>
     </Layout>
   )
 }

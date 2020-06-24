@@ -13,12 +13,12 @@ const Navbar = ({ path }) => {
             to: '/',
         },
         {
-            label: 'About',
-            to: 'https://doublespringsmedia.com',
+            label: 'About DSM',
+            to: '/about/',
         },
         {
-            label: 'Contact',
-            to: '/contact',
+            label: 'Get In Touch',
+            to: '/contact/',
         },
     ]
 

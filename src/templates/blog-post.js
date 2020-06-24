@@ -20,9 +20,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <Hero
-        image={post.frontmatter.featured_image.childImageSharp.fluid}
-      >
+      <Hero image={post.frontmatter.featured_image.childImageSharp.fluid}>
         <div className="text-white italic leading-lg mb-2 text-sm md:text-base">
           {post.frontmatter.date}
           <span className="inline-block mx-2">–</span>
@@ -34,32 +32,34 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       </Hero>
       <article className="w-full max-w-2xl mx-auto text-center mb-12 text-gray-700">
         <p className="text-left mb-10">
-          <Link to="/" className="font-serif italic text-gray-500 hover:text-gray-700">&larr; Back to blog</Link>
+          <Link
+            to="/"
+            className="font-serif italic text-gray-500 hover:text-gray-700"
+          >
+            &larr; Back to blog
+          </Link>
         </p>
         <VimeoEmbed id={post.frontmatter.video_id} className="mb-10" />
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <section dangerouslySetInnerHTML={{ __html: post.html }} />
+        <nav>
+          <ul>
+            <li>
+              {previous && (
+                <Link to={previous.fields.slug} rel="prev">
+                  ← {previous.frontmatter.title}
+                </Link>
+              )}
+            </li>
+            <li>
+              {next && (
+                <Link to={next.fields.slug} rel="next">
+                  {next.frontmatter.title} →
+                </Link>
+              )}
+            </li>
+          </ul>
+        </nav>
       </article>
-
-      <nav>
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
     </Layout>
   )
 }
