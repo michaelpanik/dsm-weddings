@@ -37,7 +37,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           </Link>
         </p>
         <VimeoEmbed id={post.frontmatter.video_id} className="mb-10" />
-        <section dangerouslySetInnerHTML={{ __html: post.html }} className="mb-10" />
+        <section dangerouslySetInnerHTML={{ __html: post.html }} className="mb-10 blog-content" />
         <nav>
           <ul className="flex justify-between">
             <li>

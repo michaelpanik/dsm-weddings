@@ -24,7 +24,7 @@ const Navbar = ({ path }) => {
         },
         {
             label: 'Contact',
-            to: '/contact/',
+            to: 'https://doublespringsmedia.com/#get-started',
         },
     ]
 

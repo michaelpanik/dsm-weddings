@@ -5,3 +5,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.blog-content a {
+  @apply text-gray-800 underline;
+}
