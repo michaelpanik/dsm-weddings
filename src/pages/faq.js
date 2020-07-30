@@ -22,27 +22,27 @@ const FaqPage = ({ data, location }) => {
           faqs={[
             {
               q: "How much does it cost?",
-              a: "Answer"
+              a: "Each wedding is unique, so we approach them all different! To get started, reach out to us and we'll set up a time to talk. Depending on your needs and budget, we'll put together a quote tailored just for you and your day."
             },
             {
               q: "What packages do you offer/what all can you do?",
-              a: "Answer"
+              a: "Just about anything you can dream up! Generally, we put together custom packages per-wedding including a full day highlight, full ceremony cut, receptions, rehearsal dinners, and anything else you might want filmed. Our most popular options are highlight film only, and highlight + full ceremony."
             },
             {
               q: "What's the process/how long will it take to get my video?",
-              a: "Answer"
+              a: "First, we do our consultation and get a quote together. Once that's good, we take half payment up front as a deposit, to secure your date. We'll be in communication about the timeline of the wedding day. The day of, we'll arrive on time and go to work, filming all around the action for as long as we've agreed upon. The editing process for highlight films takes four to five weeks, including a 60 second teaser video two weeks after your wedding. The ceremony cut will come later, and usually takes around a week."
             },
             {
               q: "Can you do just the [ceremony/reception/other]?",
-              a: "Answer"
+              a: "Same as packages, we can tailor our services to fit your needs – just ask!"
             },
             {
               q: "What if I need to change my wedding date?",
-              a: "Answer"
+              a: "We can't always guarantee that a date is available. Once the downpayment is handled, it secures only the date we've agreed to. If your new date is available, we'll block it for you, no problem. If you need to change the date of your wedding, let us know and we'll work it out together."
             },
             {
               q: "What if I need to cancel?",
-              a: "Answer"
+              a: "Please contact us immediately and let us know if you have to cancel your wedding. Downpayments are non-refundable."
             },
           ]}
         />
