@@ -9,9 +9,7 @@ const Layout = ({ children }) => {
   return (
     <div className="text-gray-700">
       <Navbar />
-      <main className="px-0 md:px-8">
-        {children}
-      </main>
+      <main className="px-0 md:px-8">{children}</main>
       <Footer />
     </div>
   )

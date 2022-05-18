@@ -3,7 +3,7 @@ import Img from "gatsby-image"
 
 const Hero = ({ image, title, children }) => {
   return (
-    <div className="py-32 font-serif text-center mb-12 relative overflow-hidden">
+    <div className="py-32 font-serif text-center mb-12 relative overflow-hidden bg-gray-800">
       <Img
         fixed={image}
         style={{
