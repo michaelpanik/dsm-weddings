@@ -17,6 +17,17 @@ const StreamPage = () => {
       </Hero>
       <div className="text-center">
         <p>June 11, 2022</p>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/live_stream?channel=UC0WmzRGwQkmzRdcnklL66vw"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+        <p>
+          If you encounter any issues, please visit{" "}
+          <a href="https://youtu.be/PYPCxd9itYM">YouTube directly</a>.
+        </p>
       </div>
     </Layout>
   )
