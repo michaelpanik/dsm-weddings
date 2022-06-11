@@ -20,13 +20,20 @@ const StreamPage = () => {
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/live_stream?channel=UC0WmzRGwQkmzRdcnklL66vw"
+          src="https://www.youtube.com/embed/PYPCxd9itYM"
           frameborder="0"
           allowfullscreen
+          className="mx-auto my-8"
         ></iframe>
         <p>
-          If you encounter any issues, please visit{" "}
-          <a href="https://youtu.be/PYPCxd9itYM">YouTube directly</a>.
+          If you encounter any issues, please{" "}
+          <a
+            href="https://youtu.be/PYPCxd9itYM"
+            className="underline hover:text-gray-500"
+          >
+            visit YouTube directly
+          </a>
+          .
         </p>
       </div>
     </Layout>
